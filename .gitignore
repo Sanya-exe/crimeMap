@@ -22,3 +22,16 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local secrets and large files
+venv/
+serviceAccountKey.json
+combined.csv
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Partial downloads
+*.part
