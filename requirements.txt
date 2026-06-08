@@ -1,8 +1,7 @@
 flask==2.3.3
 flask-cors==4.0.0
-pandas==1.5.3
+pandas==2.0.3
 numpy==1.26.3
-torch==2.3.0
 firebase-admin==6.5.0
 python-dotenv==1.0.1
 gdown==5.2.0

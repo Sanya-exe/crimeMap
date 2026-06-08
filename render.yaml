@@ -5,7 +5,7 @@ services:
     region: oregon
     buildCommand: ./build.sh
     startCommand: gunicorn -w 4 -b 0.0.0.0:5000 Map:app
-    pythonVersion: 3.8
+    pythonVersion: 3.11
     envVars:
       - key: GOOGLE_APPLICATION_CREDENTIALS
         value: /etc/secrets/serviceAccountKey.json  # Path where Render stores the secret file
