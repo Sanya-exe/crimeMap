@@ -37,10 +37,24 @@ with open('sorted_data1.geojson',encoding='UTF-8') as f:
 # Load the dataset
 df = pd.read_csv('processed_crime.csv')
 
-# Custom unpickling function
+# Custom unpickling function that remaps __main__ to correct module when running via gunicorn
+class CustomUnpickler(pickle.Unpickler):
+    def find_class(self, module, name):
+        if module == '__main__':
+            if name == 'LSTMNet':
+                from LSTMmodel import LSTMNet
+                return LSTMNet
+            elif name == 'RNNNet':
+                from RNNmodel import RNNNet
+                return RNNNet
+            elif name == 'GRUNet':
+                from GRUmodel import GRUNet
+                return GRUNet
+        return super().find_class(module, name)
+
 def custom_unpickler(file, model_class):
     with open(file, 'rb') as f:
-        return pickle.load(f, fix_imports=False, encoding='ASCII', errors='strict')
+        return CustomUnpickler(f).load()
 
 # Load the prediction models
 lstm_model = custom_unpickler('crime_predLSTM_model.pkl', LSTMNet)
