@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import './ContactPage.css'
 
-const BACKEND = 'http://127.0.0.1:5000'
+const BACKEND = 'https://crimemap-z3so.onrender.com'
 
 function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })

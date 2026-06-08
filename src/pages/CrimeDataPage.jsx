@@ -14,7 +14,7 @@ import './CrimeDataPage.css'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
-const BACKEND = 'http://127.0.0.1:5000'
+const BACKEND = 'https://crimemap-z3so.onrender.com'
 
 function CrimeDataPage() {
   const [startDate, setStartDate] = useState('2023-01-01')

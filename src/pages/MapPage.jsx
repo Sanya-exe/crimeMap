@@ -4,7 +4,7 @@ import axios from 'axios'
 import { interpolateOrRd } from 'd3-scale-chromatic'
 import './MapPage.css'
 
-const BACKEND = 'http://127.0.0.1:5000'
+const BACKEND = 'https://crimemap-z3so.onrender.com'
 
 function getColor(value, max) {
   if (!max || max === 0) return '#1e3a5f'
